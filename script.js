@@ -42,7 +42,7 @@ const { exec } = require('child_process'); // Importa el módulo para ejecutar c
   await browser.close();
 
   // Define el nombre del archivo de salida de video.
-  const outputVideo = 'output.mov';
+  const outputVideo = 'outputNEW.mov';
   // Ejecuta el comando FFmpeg para convertir las capturas de pantalla en un video MOV con transparencia.
   exec(`ffmpeg -framerate ${framesPerSecond} -i frame%03d.png -c:v prores_ks -pix_fmt yuva444p10le -vf "scale=${contentSize.width}:-1" -profile:v 4444 -y ${outputVideo}`, (error, stdout, stderr) => {
     if (error) {
